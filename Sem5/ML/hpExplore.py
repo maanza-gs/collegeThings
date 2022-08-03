@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("Z:/collegeThings/Sem5/ML/hpprediction/data.csv")
 # print(data.describe())
@@ -8,7 +8,7 @@ data = pd.read_csv("Z:/collegeThings/Sem5/ML/hpprediction/data.csv")
 def plotScatter(X,Y):
     print(X + '  vs  ' + Y)
     
-    # plt.scatter(data[X],data[Y])
+    plt.scatter(data[X],data[Y])
     n = len(data[X])
     sumX = np.sum(data[X])
     sumX2 = np.sum(data[X]*data[X])
@@ -19,12 +19,12 @@ def plotScatter(X,Y):
     xty = [sumY, sumXY]
     b = np.matmul(xtxinv,xty)
     print(b)
-    # x = np.linspace(0,10000)
-    # y = b[0] + b[1]*x;
-    # plt.plot(x,y,'-r')
-    # plt.xlabel(X)
-    # plt.ylabel(Y)
-    # plt.show()
+    x = np.linspace(0,10000)
+    y = b[0] + b[1]*x;
+    plt.plot(x,y,'-r')
+    plt.xlabel(X)
+    plt.ylabel(Y)
+    plt.show()
     
     ynew = []
     for i in data[X]:

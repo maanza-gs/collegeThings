@@ -26,7 +26,7 @@ y = b[0] + b[1]*x;
 # plt.plot(x,y,'-r')
 # plt.show()
 
-print(b[0] + b[1]*4.25)
+# print(b[0] + b[1]*4.25)
 
 
 ynew = []
@@ -41,7 +41,7 @@ for i in data['Y']:
     e.append(erval*erval)
     k+=1
     
-print(sum(e))
+# print(sum(e))
 
 mean = np.mean(data['Y'])
 
@@ -49,7 +49,7 @@ s = 0
 for i in data['Y']:
     s += i-mean
 
-print(s)
+# print(s)
 
 e = []
 k = 0
@@ -58,6 +58,6 @@ for i in data['Y']:
     e.append(erval*erval)
     k+=1
     
-print(sum(e))
+# print(sum(e))
 
     
