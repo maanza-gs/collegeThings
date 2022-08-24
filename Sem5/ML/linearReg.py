@@ -28,7 +28,7 @@ y = b[0] + b[1]*x;
 
 # print(b[0] + b[1]*4.25)
 
-
+#SSE
 ynew = []
 for i in data['X']:
     yval = b[0] + b[1]*i
@@ -43,6 +43,7 @@ for i in data['Y']:
     
 # print(sum(e))
 
+#SST
 mean = np.mean(data['Y'])
 
 s = 0
@@ -51,6 +52,7 @@ for i in data['Y']:
 
 # print(s)
 
+#SSR
 e = []
 k = 0
 for i in data['Y']:
