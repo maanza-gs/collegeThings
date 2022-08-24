@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv("Z:/collegeThings/Sem5/ML/hpprediction/data.csv")
+data = pd.read_csv("Z:/collegeThings/Sem5/ML/data.csv")
 
 
-def multiCol(X,Y):
+def vifCheck(X,Y):
     n = len(data[X])
     sumX = np.sum(data[X])
     sumX2 = np.sum(data[X]*data[X])
@@ -21,8 +21,7 @@ def multiCol(X,Y):
     ynew = []
     for i in data[X]:
         yval = b[0] + b[1]*i
-        ynew.append(yval)
-        
+        ynew.append(yval)     
     sse = 0
     k = 0
     for i in data[Y]:
@@ -32,22 +31,37 @@ def multiCol(X,Y):
         
     #SST
     mean = np.mean(data[Y])
-
     sst = 0
     for i in data[Y]:
         erval = i-mean
         sst+=erval*erval
         
     ssr = sst - sse        
-    
     r2 = ssr/sst  
     vif = 1/(1-r2)
-    
     print(r2)
-    
     print(vif)
+    
+    
+def corrCheck(X,Y):
+    n = len(data[X])
+    xbar = np.mean(data[X])
+    ybar = np.mean(data[Y])   
+    
+    sums = 0
+    for i in range(0,n):
+        sums+= ((data[X][i]-xbar)*(data[Y][i]-ybar))   
+    cov = sums/(n-1)
+    
+
+    corrxy = cov/(np.std(data[X])*np.std(data[Y]))
+    print(corrxy)
+        
+    
+X = 'yr_renovated'
+Y = 'yr_built'
+corrCheck(X,Y)
 
 
-X = 'sqft_living'
-Y = 'sqft_lot'
-multiCol(X,Y)
+    
+        
