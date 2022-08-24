@@ -58,8 +58,8 @@ def corrCheck(X,Y):
     print(corrxy)
         
     
-X = 'yr_renovated'
-Y = 'yr_built'
+X = 'bathrooms'
+Y = 'yr_renovated'
 corrCheck(X,Y)
 
 
