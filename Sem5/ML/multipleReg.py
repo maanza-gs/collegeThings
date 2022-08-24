@@ -62,6 +62,7 @@ X = 'bathrooms'
 Y = 'yr_renovated'
 corrCheck(X,Y)
 
+#sqft_living & sqft_lot
 
     
         
