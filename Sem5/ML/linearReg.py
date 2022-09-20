@@ -62,4 +62,12 @@ for i in data['Y']:
     
 # print(sum(e))
 
+
+# skewness can be inferred from the difference b/w mean and median
+# if the occurence of outliers is large, then kurtosis is high...
+# mean = 0 and std = 1 means normalised data
+# train and test is split randomly everytime, but certain features are always common
+
+
+
     

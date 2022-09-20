@@ -1,4 +1,5 @@
 package com.company;
+import com.company.InsuredPackage;
 
 public class UsePackage {
     InsuredPackage ip1 = new InsuredPackage(103, 'A');

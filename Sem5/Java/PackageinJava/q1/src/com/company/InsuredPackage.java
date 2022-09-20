@@ -1,4 +1,4 @@
-package com.company;
+package myPackage;
 
 public class InsuredPackage extends Package {
     InsuredPackage(double w, char t){
