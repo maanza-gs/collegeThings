@@ -27,5 +27,13 @@ for i in features:
     freqtable = pd.crosstab(index=train['class'], columns=train[i], margins=True)
     print(freqtable)
     
-    
+cpt = [[0 for i in range(0,10)]for j in range(0,2)]
+
+for i in range(0,10):
+    for j in range(0,2):
+        cpt[i][j] = freqtable.iloc[i,j]/freqtable[]
+
+
 print(round(freqtable.iloc[1, 0]/ freqtable.iloc[2, 0],3))
+
+print(cpt)
