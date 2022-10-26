@@ -22,18 +22,21 @@ pb = b/n
 features = list(data.columns)
 features.remove('class')
 
-print(features)
-for i in features:
-    freqtable = pd.crosstab(index=train['class'], columns=train[i], margins=True)
-    print(freqtable)
+# print(features)
+# for i in features:
+#     freqtable = pd.crosstab(index=train['class'], columns=train[i], margins=True)
+#     print(freqtable)
     
-cpt = [[0 for i in range(0,10)]for j in range(0,2)]
+# cpt = [[0 for i in range(0,10)]for j in range(0,2)]
 
-for i in range(0,10):
-    for j in range(0,2):
-        cpt[i][j] = freqtable.iloc[i,j]/freqtable[]
+# for i in range(0,10):
+#     for j in range(0,2):
+#         cpt[i][j] = freqtable.iloc[i,j]/freqtable.iloc[i,j]
 
 
-print(round(freqtable.iloc[1, 0]/ freqtable.iloc[2, 0],3))
+# print(round(freqtable.iloc[1, 0]/ freqtable.iloc[2, 0],3))
 
-print(cpt)
+# print(cpt)
+
+
+print(np.mean([78,96,80,65,70,80,70,90,75]))
