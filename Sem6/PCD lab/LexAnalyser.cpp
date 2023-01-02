@@ -349,9 +349,37 @@ void LexAnalyser(string s){
                 break;
 
             case 28:
-                if (s[i]=='h')
+                if (s[i]=='n')
                 {
-                    state=26;
+                    state=29;
+                    i++;
+                }
+                else if(s[i]=='u'){
+                    state=33;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 29:
+                if (s[i]=='s')
+                {
+                    state=30;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 30:
+                if (s[i]=='t')
+                {
+                    state=31;
                     i++;
                 }
                 else {
@@ -375,6 +403,18 @@ void LexAnalyser(string s){
             case 32:
                 cout<<s<<" is a keyword.\n";
                 break;
+            
+            case 33:
+                if (s[i]=='t')
+                {
+                    state=34;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
 
             case 34:
                 if (isspace(s[i]) || s[i]=='\0')
@@ -392,6 +432,58 @@ void LexAnalyser(string s){
                 cout<<s<<" is a keyword.\n";
                 break;
             
+            case 36:
+                if (s[i]=='r')
+                {
+                    state=37;
+                    i++;
+                }
+                else if(s[i]=='a'){
+                    state=42;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 37:
+                if (s[i]=='i')
+                {
+                    state=38;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+
+            case 38:
+                if (s[i]=='n')
+                {
+                    state=39;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 39:
+                if (s[i]=='t')
+                {
+                    state=40;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
             case 40:
                 if (isspace(s[i]) || s[i]=='\0')
                 {
@@ -406,6 +498,30 @@ void LexAnalyser(string s){
             
             case 41:
                 cout<<s<<" is a keyword.\n";
+                break;
+            
+            case 42:
+                if (s[i]=='s')
+                {
+                    state=43;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 43:
+                if (s[i]=='s')
+                {
+                    state=44;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
                 break;
 
             case 44:
@@ -424,6 +540,54 @@ void LexAnalyser(string s){
                 cout<<s<<" is a keyword.\n";
                 break;
             
+            case 46:
+                if (s[i]=='r')
+                {
+                    state=47;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 47:
+                if (s[i]=='e')
+                {
+                    state=48;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 48:
+                if (s[i]=='a')
+                {
+                    state=26;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 49:
+                if (s[i]=='k')
+                {
+                    state=50;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
             case 50:
                 if (isspace(s[i]) || s[i]=='\0')
                 {
@@ -440,8 +604,23 @@ void LexAnalyser(string s){
                 cout<<s<<" is a keyword.\n";
                 break;
             
+            case 52:
+                if (isalpha(s[i]) || s[i]=='_')
+                {
+                    state=53;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+
             case 53:
-                if (isspace(s[i]) || s[i]=='\0')
+                if (isalpha(s[i]) || isdigit(s[i]) || s[i]=='_') {
+                    i++;
+                }
+                else if (isspace(s[i]) || s[i]=='\0')
                 {
                     state=54;
                     i++;
@@ -453,11 +632,28 @@ void LexAnalyser(string s){
                 break;
             
             case 54:
-                cout<<s<<" is a keyword.\n";
+                cout<<s<<" is an identifier.\n";
                 break;
             
+            case 55:
+                if (isdigit(s[i]))
+                {
+                    state=56;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+
+
             case 56:
-                if (isspace(s[i]) || s[i]=='\0')
+                if (isdigit(s[i]))
+                {
+                    i++;
+                }
+                else if (isspace(s[i]) || s[i]=='\0')
                 {
                     state=57;
                     i++;
@@ -469,7 +665,51 @@ void LexAnalyser(string s){
                 break;
             
             case 57:
-                cout<<s<<" is a keyword.\n";
+                cout<<s<<" is a digit.\n";
+                break;
+            
+            case 58:
+                if (s[i]=='>')
+                {
+                    state=59;
+                    i++;
+                }
+                else if(s[i]=='+'){
+                    state=62;
+                    i++;
+                }
+                else if(s[i]=='?'){
+                    state=64;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+
+            case 59:
+                if (s[i]==' ')
+                {
+                    state=60;
+                    i++;
+                }
+                else if(s[i]=='='){
+                    state=61;
+                    i++;
+                }
+                else {
+                    s = fail(state);
+                    i = 0;
+                }
+                break;
+            
+            case 60:
+                cout<<s<<" is less than operator";
+                break;
+            
+            case 61:
+                cout<<s<<" is less than or equal to operator";
                 break;
             
             case 62:
@@ -485,7 +725,7 @@ void LexAnalyser(string s){
                 break;
             
             case 63:
-                cout<<s<<" is a keyword.\n";
+                cout<<s<<" is an arithmetic operator.\n";
                 break;
             
             case 64:
@@ -501,7 +741,7 @@ void LexAnalyser(string s){
                 break;
             
             case 65:
-                cout<<s<<" is a keyword.\n";
+                cout<<s<<" is a ternary operator.\n";
                 break;
             
             case 66:
@@ -509,5 +749,16 @@ void LexAnalyser(string s){
                 break;
         }
     }
+}
 
+int main(){
+    string s;
+    int c=0;
+    while(c==0) {
+        cout<<"Enter a string: ";
+        cin>>s;
+        LexAnalyser(s);
+        cout<<"\nCheck again? (0 - yes/ 1 - no): ";
+        cin>>c;
+    } 
 }
