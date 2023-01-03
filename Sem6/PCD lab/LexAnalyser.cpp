@@ -14,9 +14,10 @@ int fail(int s){
     else if(s>=55 && s<=57) {
         return 58;
     }
-    else if(s>=58 && s<=65) {
-        return 66;
+    else if(s>=58 && s<=64) {
+        return 65;
     }
+    return 66;
 }
 
 void LexAnalyser(string s){
@@ -125,7 +126,7 @@ void LexAnalyser(string s){
                 break;
             
             case 7:
-                cout<<s<<' is a keyword.\n';
+                cout<<s<<" is a keyword.\n";
                 break;
             
             case 8:
@@ -171,7 +172,7 @@ void LexAnalyser(string s){
             case 11:
                 if (isspace(s[i]) || s[i]=='\0')
                 {
-                    state-12;
+                    state=12;
                     i++;
                 }
                 else {
