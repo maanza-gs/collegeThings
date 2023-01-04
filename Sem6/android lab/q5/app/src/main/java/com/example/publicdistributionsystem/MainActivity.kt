@@ -31,13 +31,12 @@ class MainActivity : AppCompatActivity() {
         submitBtn.setOnClickListener {
             if (capEn.text == cap.text) {
                 submitBtn.setOnClickListener() {
-                    Toast.makeText(applicationContext, "Submitted Successfully!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Submitted Successfully!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            }
-            else
-
-            {
-                Toast.makeText(applicationContext,"Enter the captcha correctly", Toast.LENGTH_SHORT).show()
             }
         }
 

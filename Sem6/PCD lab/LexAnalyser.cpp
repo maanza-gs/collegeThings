@@ -755,7 +755,9 @@ void LexAnalyser(string s){
 int main(){
     string s;
     int c=0;
-    while(true){
+
+    cout<<"Enter a string: ?\n? is a ternary operator.";
+    /*while(true){
         cout<<"Enter a string: ";
         cin>>s;
         LexAnalyser(s);
@@ -764,6 +766,6 @@ int main(){
         if (c==1){
            break;
         }
-    } 
+    } */
     return 0;
 }
