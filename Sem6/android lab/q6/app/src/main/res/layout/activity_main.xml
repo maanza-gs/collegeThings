@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fname" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email"
         android:layout_width="334dp"
         android:layout_height="50dp"
         android:layout_marginStart="36dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/bday"
         android:layout_width="334dp"
         android:layout_height="54dp"
         android:layout_marginStart="36dp"
@@ -57,7 +57,7 @@
         android:inputType="date"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
         android:id="@+id/phno"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lname" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/gender"
         android:layout_width="335dp"
         android:layout_height="51dp"
         android:layout_marginStart="35dp"
@@ -82,6 +82,31 @@
         android:hint="Gender"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/bday" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="335dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Address"
+        android:textColor="#9A9F9F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="SAVE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
