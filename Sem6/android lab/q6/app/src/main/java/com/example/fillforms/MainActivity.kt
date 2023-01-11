@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.Toast
 import java.util.Date
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,22 +23,23 @@ class MainActivity : AppCompatActivity() {
         val phone = findViewById<EditText>(R.id.phno)
         val email = findViewById<EditText>(R.id.email)
         val bdate = findViewById<EditText>(R.id.bday)
-        val gen = findViewById<EditText>(R.id.gender)
+        val gender = findViewById<EditText>(R.id.gender)
         val address = findViewById<EditText>(R.id.address)
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            val finame=first.text.toString()
             if (first.text.toString() == "" || last.text.toString() == "" || phone.text.toString() == "" || email.text.toString() == "" || bdate.text.toString() == "" || address.text.toString() == "") {
-                Toast.makeText(
-                    this@MainActivity,
-                    "please enter all the details",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(applicationContext,"Enter the required fields", Toast.LENGTH_SHORT).show()
             } else {
                 button.visibility = VISIBLE
-                val abc = Intent(applicationContext, MainActivity2::class.java)
-                abc.putExtra("fname", finame)
-                startActivity(abc)
+                val intents = Intent(this, MainActivity2::class.java)
+                intents.putExtra("fname", first.text.toString())
+                intents.putExtra("lname", last.text.toString())
+                intents.putExtra("phone", phone.text.toString())
+                intents.putExtra("email", email.text.toString())
+                intents.putExtra("bdate", bdate.text.toString())
+                intents.putExtra("gen", gender.text.toString())
+                intents.putExtra("address", address.text.toString())
+                startActivity(intents)
             }
         }
     }
