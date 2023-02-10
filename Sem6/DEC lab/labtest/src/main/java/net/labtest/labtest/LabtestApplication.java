@@ -1,13 +1,13 @@
-package com.example.crudlabtest;
+package net.labtest.labtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrudlabtestApplication {
+public class LabtestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudlabtestApplication.class, args);
+		SpringApplication.run(LabtestApplication.class, args);
 	}
 
 }
