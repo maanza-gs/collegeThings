@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.ca2lt.fragments.splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_splash_to_login2"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_splash_to_view"
+            app:destination="@id/view" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.ca2lt.fragments.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_view"
+            app:destination="@id/view" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.ca2lt.fragments.register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_studying"
+            app:destination="@id/studying" />
+        <action
+            android:id="@+id/action_register_to_working2"
+            app:destination="@id/working2" />
+    </fragment>
+    <fragment
+        android:id="@+id/view"
+        android:name="com.example.ca2lt.fragments.view"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view" />
+    <fragment
+        android:id="@+id/studying"
+        android:name="com.example.ca2lt.fragments.Studying"
+        android:label="fragment_studying"
+        tools:layout="@layout/fragment_studying" />
+    <fragment
+        android:id="@+id/working2"
+        android:name="com.example.ca2lt.fragments.Working"
+        android:label="fragment_working"
+        tools:layout="@layout/fragment_working" />
+</navigation>
