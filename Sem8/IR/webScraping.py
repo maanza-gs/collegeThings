@@ -7,15 +7,28 @@ Created on Tue Dec 19 10:48:58 2023
 
 import requests 
 from bs4 import BeautifulSoup 
-import webbrowser
+import lxml
 
-URL = "https://en.wikipedia.org/wiki/List_of_South_Korean_boy_bands#Generation_4"
+URL = "https://www.goodreads.com/shelf/show/2023-release"
 r = requests.get(URL) 
 
-soup = BeautifulSoup(r.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib 
+soup = BeautifulSoup(r.text, 'html.parser') # If this line causes an error, run 'pip install html5lib' or install html5lib 
 # print(soup.prettify()) 
 
-groups=[]  # a list to store quotes 
+bookTitles=[] 
+authorNames=[]
+avgRatings=[]
+bookLink=[] 
    
-results = soup.find(id="wikitable")
-print(results) 
+bookNameScraping = soup.findAll('a', attrs={'class': 'bookTitle'})
+# for i in bookNameScraping:
+#     print('B: ', i.text)
+    
+authorNameScraping = soup.findAll('a', attrs={'class': 'authorName'})
+# for i in authorNameScraping:
+#     print('A: ', i.text)
+
+bookLinkScraping = soup.findAll('a',href=True, )
+for i in bookNameScraping:
+    print('L: ', i,type(i))
+    
