@@ -51,12 +51,14 @@ pmf.plot(kind = "bar")
 #2
 genderProportion = data['Gender'].value_counts(normalize=True)
 print("Proportion of the number of male vs female customers", genderProportion)
+print ("MaleProportion:: ", data.groupby('Gender').Gender.count()/len(data['Gender']))
 if genderProportion[0]<genderProportion[1]:
     print("Gender with higher proportion: Male")
 else :
     print("Gender with higher proportion: Female")
 #3
-premiumAvgUsingGender = data.groupby('Gender').Annual_Premium.value_counts(normalize=True)
+premiumAvgUsingGender = data.groupby('Gender').Annual_Premium.count()/len(data['Annual_Premium'])
 print(premiumAvgUsingGender)
    
+
 
